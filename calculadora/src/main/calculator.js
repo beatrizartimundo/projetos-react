@@ -13,9 +13,6 @@ const initialState = {
     current:0
 }
 
-
-
-
 export default class Calculator extends Component{
 
     state = {...initialState}
@@ -28,12 +25,12 @@ export default class Calculator extends Component{
     }
 //função para limpar o display
     clearMemory(){
-        console.log('limpar')
+        //console.log('limpar')
         this.setState({...initialState})
     }
     //função que ira realizar as operações
     setOperation(operation){
-        console.log(operation)
+        //console.log(operation)
         if(this.state.current === 0){
             this.setState({operation,current:1,clearDisplay:true})
         }else{
@@ -41,12 +38,35 @@ export default class Calculator extends Component{
             const currentOperation = this.state.operation
 
             const values = [...this.state.values]
-            try{
-            values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
-            }catch(e){
-                values[0] = this.state.values[0]
+            
+            //utilizando função eval
+            
+            // try{
+            // values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
+            // }catch(e){
+            //     values[0] = this.state.values[0]
+            // }
+            //values[1] = 0
+
+            //utilizando switch no lugar do eval
+            switch(currentOperation){
+                case "+":
+                    values[0] += values[1];
+                    break;
+                case "-":
+                    values[0] -= values[1];
+                    break;
+                case "*":
+                    values[0] *= values[1]
+                    break;
+                case "/":
+                    values[0] /= values[1]
+                    //escolha quantas casas decimais vai exibir
+                    values[0] = parseFloat(values[0].toFixed(6))
+                    break;
+                default:
             }
-            values[1] = 0
+           
 
             this.setState({
                 displayValue:values[0],
@@ -58,7 +78,7 @@ export default class Calculator extends Component{
         }
     }
     addDigit(n){
-        console.log(n)
+        //console.log(n)
         //função para caso clique duas vezes no ponto
         if(n=== '.' && this.state.displayValue.includes('.')){
             return
@@ -67,7 +87,7 @@ export default class Calculator extends Component{
         const clearDisplay = this.state.displayValue === '0' ||
         this.state.clearDisplay
         const currentValue = clearDisplay ? '': this.state.displayValue
-        const displayValue = currentValue + n
+        const displayValue = currentValue + n 
         this.setState({displayValue,clearDisplay:false})
         
 
