@@ -1,0 +1,38 @@
+body{
+  margin: 0 15px;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+    
+  background: #FF0099;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #493240, #FF0099);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #493240, #FF0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
+  font-family: sans-serif;
+}
+
+input{
+  background-color: bisque;
+  height: 25px;
+  width: 300px;
+  border: none;
+  outline: none;
+  margin: 0 10px;
+}
+button{
+  background-color: black;
+  height: 30px;
+  width: 100px;
+  border: black;
+  color: white;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+button:hover{
+  opacity: 0.9;
+}
