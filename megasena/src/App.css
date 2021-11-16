@@ -4,10 +4,43 @@ body{
   align-items: center;
   justify-content: center;
     
-  background: #FF0099;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #493240, #FF0099);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #493240, #FF0099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,57,1) 35%, rgba(0,212,255,1) 100%);
 
   color: white;
   font-family: sans-serif;
 }
+
+.mega-card {
+  /* glass */
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  padding: 1.5rem;
+  justify-content: space-between;
+
+}
+
+.mega-card input {
+  width: 50px;
+}
+
+.mega-card button {
+  margin-left: 1rem;
+  color: white;
+  background-color: rgba(121,9,57,1);
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.conteudo {
+  padding-left: 30%;
+}
+
+.resultado {
+  margin-top: 15px;
+} 

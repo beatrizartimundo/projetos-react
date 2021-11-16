@@ -17,14 +17,17 @@ export default function Mega() {
       }
     }
 
-    return resultado.innerHTML =numMega;
+    return resultado.innerHTML = numMega;
   };
 
   return (
-    <div>
-      <input type="text" id="valor" />
-      <button type="button" onClick={numerosMega}>Gerar mega</button>
-      <div id="result"></div>
+    <div className="mega-card">
+      <div className="conteudo">
+        <input type="text" id="valor" />
+        <button type="button" onClick={numerosMega}>Gerar numeros</button>
+
+      </div>
+      <div id="result" className="resultado"></div>
     </div>
   )
 }
